@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 프로필 분석기</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>GitHub 프로필 분석기</h1>
+      <p class="subtitle">유저 이름을 입력하면 프로필, 사용 언어 비율, 인기 저장소를 보여줘요.</p>
+    </header>
+
+    <form id="searchForm" class="search" novalidate>
+      <input id="usernameInput" type="text" placeholder="GitHub 유저 이름 (예: torvalds)"
+             autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="GitHub 유저 이름">
+      <button id="searchButton" type="submit">검색</button>
+    </form>
+    <p id="inputHint" class="input-hint" role="alert" hidden></p>
+
+    <div id="status" class="status" hidden></div>
+
+    <section id="result" hidden>
+      <article id="profileCard" class="card profile"></article>
+
+      <section class="card">
+        <h2>언어 비율</h2>
+        <p class="note">fork한 저장소는 제외 · 최근 업데이트 100개 기준</p>
+        <div id="languageList" class="language-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>인기 저장소 TOP 5</h2>
+        <p class="note">최근 업데이트 100개 기준</p>
+        <ul id="topRepoList" class="repo-list"></ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
